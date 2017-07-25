@@ -57,11 +57,13 @@ var writePages = function () {
                   componentChunkName = _ref2.componentChunkName,
                   layout = _ref2.layout,
                   jsonName = _ref2.jsonName;
+
+              var layoutOjb = getLayoutById(layouts)(layout);
               return [].concat((0, _toConsumableArray3.default)(mem), [{
                 componentChunkName: componentChunkName,
                 layout: layout,
-                layoutComponentChunkName: getLayoutById(layouts)(layout).componentChunkName,
-                layoutJsonName: getLayoutById(layouts)(layout).jsonName,
+                layoutComponentChunkName: layoutOjb && layoutOjb.componentChunkName,
+                layoutJsonName: layoutOjb && layoutOjb.jsonName,
                 jsonName: jsonName,
                 path: path,
                 matchPath: matchPath
