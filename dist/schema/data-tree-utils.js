@@ -70,7 +70,7 @@ var isEmptyObjectOrArray = function isEmptyObjectOrArray(obj) {
 var extractFieldExamples = function extractFieldExamples(nodes
 // $FlowFixMe
 ) {
-  return _.mergeWith.apply(_, [_.isArray(nodes[0]) ? [] : {}].concat((0, _toConsumableArray3.default)(nodes), [function (obj, next, key, po, pn, stack) {
+  return _.mergeWith.apply(_, [_.isArray(nodes[0]) ? [] : {}].concat((0, _toConsumableArray3.default)(_.cloneDeep(nodes)), [function (obj, next, key, po, pn, stack) {
     if (obj === INVALID_VALUE) return obj;
 
     // TODO: if you want to support infering Union types this should be handled

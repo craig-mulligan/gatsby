@@ -17,16 +17,10 @@ emitter.on("CREATE_NODE", function (action) {
 emitter.on("CREATE_PAGE", function (action) {
   var page = action.payload;
   apiRunnerNode("onCreatePage", { page: page, traceId: action.traceId }, action.plugin.name);
-
-  var component = store.getState().components[page.component];
-  apiRunnerNode("onCreateComponent", { component: component, traceId: action.traceId }, action.plugin.name);
 });
 
 emitter.on("CREATE_LAYOUT", function (action) {
   var layout = action.payload;
   apiRunnerNode("onCreateLayout", { layout: layout, traceId: action.traceId }, action.plugin.name);
-
-  var component = store.getState().components[layout.component];
-  apiRunnerNode("onCreateComponent", { component: component, traceId: action.traceId }, action.plugin.name);
 });
 //# sourceMappingURL=plugin-runner.js.map

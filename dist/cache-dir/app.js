@@ -78,7 +78,9 @@ _reactDom2.default.render(_react2.default.createElement(
   _reactHotLoader.AppContainer,
   null,
   _react2.default.createElement(Root, null)
-), rootElement);
+), rootElement, function () {
+  apiRunner("onInitialClientRender");
+});
 
 if (module.hot) {
   module.hot.accept("./root", function () {
@@ -90,7 +92,9 @@ if (module.hot) {
       _reactHotLoader.AppContainer,
       null,
       _react2.default.createElement(NextRoot, null)
-    ), rootElement);
+    ), rootElement, function () {
+      apiRunner("onInitialClientRender");
+    });
   });
 }
 //# sourceMappingURL=app.js.map
